@@ -1,14 +1,14 @@
+
 package acme.entities.workProgrammes;
 
-import java.util.Date;
+import java.util.Collection;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import acme.framework.datatypes.Money;
+import acme.entities.activities.Activity;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,22 +16,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class WorkProgramme extends DomainEntity{
-	
-	private static final long serialVersionUID = 1L;
-	
-	@NotBlank
-	private String title;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	private Date creation;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
-	private Date deadline;
+public class WorkProgramme extends DomainEntity {
 
+	private static final long		serialVersionUID	= 1L;
+
+	//Relations
 	@NotNull
-	private Money budget;
-	
+	@Valid
+	@OneToMany(mappedBy = "workProgramme")
+	private Collection<Activity>	activities;
+
 }

@@ -1,3 +1,4 @@
+
 package acme.entities.roles;
 
 import javax.persistence.Entity;
@@ -10,20 +11,20 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Entrepreneur extends UserRole{
+public class Entrepreneur extends UserRole {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long	serialVersionUID	= 1L;
+
 	@NotBlank
-	private String name;
-	
+	private String				name;
+
 	@NotBlank
-	private String activitySector;
-	
+	private String				activitySector;
+
 	@NotBlank
-	private String qualificationRecord;
-	
+	private String				qualificationRecord;
+
 	@NotBlank
-	private String skillsRecord;
-	
+	private String				skillsRecord;
+
 }
