@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -17,9 +18,12 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.activities.Activity;
+import acme.entities.applications.Application;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -30,7 +34,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "deadline")
+	@Index(columnList = "creationMoment")
 })
 public class InvestmentRound extends DomainEntity {
 
@@ -71,7 +75,13 @@ public class InvestmentRound extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@OneToMany(mappedBy = "investmentRound")
+	@OneToMany(mappedBy = "investmentRound", fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<Activity>	workProgramme;
 
+	@NotNull
+	@Valid
+	@OneToMany(mappedBy = "investmentRound", fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SUBSELECT)
+	private Collection<Application>	applications;
 }

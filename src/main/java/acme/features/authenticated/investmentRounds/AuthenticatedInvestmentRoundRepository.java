@@ -12,10 +12,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedInvestmentRoundRepository extends AbstractRepository {
 
-	@Query("select i from InvestmentRound i where i.id = ?1 and i.deadline > current_date()")
+	@Query("select i from InvestmentRound i where i.id = ?1")
 	InvestmentRound findOneById(int id);
 
-	@Query("select i from InvestmentRound i where i.deadline > current_date()")
+	@Query("select i from InvestmentRound i")
 	Collection<InvestmentRound> findMany();
 
 }

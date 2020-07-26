@@ -76,25 +76,26 @@ master.menu.user-account.become-consumer = Become a consumer
 # master.menu.bulletin ###############################################################
 
 master.menu.anonymous.bulletin.bulletins = Bulletins
-master.menu.anonymous.bulletin.pazos.create = Create Pazos Bulletin
-master.menu.anonymous.bulletin.pazos.list = List Pazos Bulletin
-master.menu.anonymous.bulletin.rosa.create = Create Rosa Bulletin
-master.menu.anonymous.bulletin.rosa.list = List Rosa Bulletin
-master.menu.anonymous.bulletin.murillo.create = Create Murillo Bulletin
-master.menu.anonymous.bulletin.murillo.list = List Murillo Bulletin
+master.menu.anonymous.bulletin.pazos.create = Create Pazos bulletin
+master.menu.anonymous.bulletin.pazos.list = List Pazos bulletin
+master.menu.anonymous.bulletin.rosa.create = Create Rosa bulletin
+master.menu.anonymous.bulletin.rosa.list = List Rosa bulletin
+master.menu.anonymous.bulletin.murillo.create = Create Murillo bulletin
+master.menu.anonymous.bulletin.murillo.list = List Murillo bulletin
 
 # master.menu.authenticated ###############################################################
 
 master.menu.authenticated.menu.authenticated = Authenticated
 master.menu.authenticated.inquires = Inquires
-master.menu.authenticated.inquiry.list = List of Inquiries
+master.menu.authenticated.inquiry.list = List of inquiries
 master.menu.authenticated.overtures = Overtures
-master.menu.authenticated.overture.list = List of Overtures
+master.menu.authenticated.overture.list = List of overtures
 master.menu.authenticated.notice = Notices
-master.menu.authenticated.notice.list = List of Notices
-master.menu.authenticated.technologyRecord.list = List of Technology Records
-master.menu.authenticated.toolRecord.list = List of Tool Records
-master.menu.authenticated.challenge.list = List of Challenges
+master.menu.authenticated.notice.list = List of notices
+master.menu.authenticated.technologyRecord.list = List of technology records
+master.menu.authenticated.toolRecord.list = List of tool records
+master.menu.authenticated.challenge.list = List of challenges
+master.menu.authenticated.investmentRound.list = List of investment rounds
 
 # master.menu.anonymous.technologyRecord ###############################################################
 

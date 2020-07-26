@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 		
-	<definition name="authenticated/investmentRound/list" extends="master">
+	<definition name="authenticated/investment-round/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/investmentRound/list.jsp" />
 	</definition>
 	
 	
-	<definition name="authenticated/investmentRound/form" extends="master">
+	<definition name="authenticated/investment-round/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/investmentRound/form.jsp" />
 	</definition>
 	

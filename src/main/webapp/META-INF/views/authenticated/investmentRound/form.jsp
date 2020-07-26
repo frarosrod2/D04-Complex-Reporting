@@ -8,16 +8,15 @@
 	<acme:form-textbox code="authenticated.investmentRound.form.label.round" path="round"/>
 	<acme:form-textbox code="authenticated.investmentRound.form.label.title" path="title"/>
 	<acme:form-textbox code="authenticated.investmentRound.form.label.creationMoment" path="creationMoment"/>
-	<acme:form-textbox code="authenticated.investmentRound.form.label.description" path="description"/>
+	<acme:form-textarea code="authenticated.investmentRound.form.label.description" path="description"/>
 	<acme:form-textbox code="authenticated.investmentRound.form.label.money" path="money"/>
-	<acme:form-textarea code="authenticated.investmentRound.form.label.link" path="link"/>
+	<acme:form-textbox code="authenticated.investmentRound.form.label.link" path="link"/>
 	<acme:form-panel code="authenticated.investmentRound.form.label.workProgramme">
-	
 		<table class="table table-striped">	
 			<tbody>
 				<c:forEach items="${workProgramme}" var="activity">
 						<tr>
-							<td>${activity}</td>
+							<td>${activity.title}</td>
 						</tr>
 			</c:forEach>
 			</tbody>
