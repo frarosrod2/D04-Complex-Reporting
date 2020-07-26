@@ -5,8 +5,10 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -27,10 +29,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "deadline")
+})
 public class InvestmentRound extends DomainEntity {
 
 	private static final long		serialVersionUID	= 1L;
 
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{2}-[0-9]{6}")
 	@NotBlank
 	private String					ticker;
 
@@ -54,7 +60,7 @@ public class InvestmentRound extends DomainEntity {
 	private Money					money;
 
 	@URL
-	private String					url;
+	private String					link;
 
 	//Relations
 
@@ -66,6 +72,6 @@ public class InvestmentRound extends DomainEntity {
 	@NotNull
 	@Valid
 	@OneToMany(mappedBy = "investmentRound")
-	private Collection<Activity>	activities;
+	private Collection<Activity>	workProgramme;
 
 }
