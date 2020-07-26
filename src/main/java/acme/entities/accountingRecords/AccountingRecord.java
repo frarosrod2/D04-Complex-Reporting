@@ -29,7 +29,7 @@ public class AccountingRecord extends DomainEntity{
 	
 	@NotBlank
 	@Pattern(regexp = "^(DRAFT)?(PUBLISHED)?$")
-	private String status;
+	private String status; 
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
