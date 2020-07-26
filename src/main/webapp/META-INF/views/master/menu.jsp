@@ -106,6 +106,8 @@
 			<acme:menu-suboption code="master.menu.authenticated.toolRecord.list" action="/authenticated/tool-record/list"/>
 			<acme:menu-separator/>					
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
+			<acme:menu-separator/>					
+			<acme:menu-suboption code="master.menu.authenticated.investmentRound.list" action="/authenticated/investment-round/list"/>
 			
 		</acme:menu-option>
 		
