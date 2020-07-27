@@ -385,6 +385,43 @@
 		<property name="userAccount" ref="investor2UserAccount" />
 	</bean>
 	
+	<!-- Patron -->
+	
+	
+	<bean name="patron1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="patron1" />
+		<property name="password" value="patron1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Patron" />
+				<property name="surname" value="One" />
+				<property name="email" value="patron.one@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="patron1Patron" />
+				<ref bean="patron1Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="patron1Patron" class="acme.entities.roles.Patron">
+		<property name="name" value="Patron1" />
+		<property name="userAccount" ref="patron1UserAccount"/>
+		
+	</bean>
+
+	<bean name="patron1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="patron1UserAccount" />
+	</bean>
+	
+
+
+
+
+
 	
 	<bean id="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
 		<property name="title" value="Acme Investment" />

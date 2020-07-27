@@ -1,5 +1,5 @@
 
-package acme.features.administrator.banner;
+package acme.features.patron.banner;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.banners.Banner;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AdministratorBannerRepository extends AbstractRepository {
+public interface PatronBannerRepository extends AbstractRepository {
 
 	@Query("select b from Banner b where b.id = ?1")
 	Banner findOneById(int id);

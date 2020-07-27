@@ -61,9 +61,6 @@
 			<acme:menu-suboption code="master.menu.administrator.notice.create" action="/administrator/notice/create"/>
 			<acme:menu-suboption code="master.menu.administrator.notice.list" action="/administrator/notice/list"/>
 			<acme:menu-separator/>			
-			<acme:menu-suboption code="master.menu.administrator.createBanners" action="/administrator/banner/create"/>
-			<acme:menu-suboption code="master.menu.administrator.listBanners" action="/administrator/banner/list"/>
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.createInquiries" action="/administrator/inquiry/create"/>
 			<acme:menu-suboption code="master.menu.administrator.listInquiries" action="/administrator/inquiry/list"/>
 			<acme:menu-separator/>
@@ -81,6 +78,13 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
+				
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">		
+			<acme:menu-suboption code="master.menu.patron.createBanners" action="/patron/banner/create"/>
+			<acme:menu-suboption code="master.menu.patron.listBanners" action="/patron/banner/list"/>
+		</acme:menu-option>		
+				
+				
 				
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

@@ -1,5 +1,5 @@
 
-package acme.features.administrator.banner;
+package acme.features.patron.banner;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -9,17 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
+import acme.entities.roles.Patron;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorBannerCreateService implements AbstractCreateService<Administrator, Banner> {
+public class PatronBannerUpdateService implements AbstractUpdateService<Patron, Banner> {
 
 	@Autowired
-	AdministratorBannerRepository repository;
+	PatronBannerRepository repository;
 
 
 	@Override
@@ -36,7 +37,6 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 		assert errors != null;
 
 		request.bind(entity, errors);
-
 	}
 
 	@Override
@@ -49,10 +49,14 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 	}
 
 	@Override
-	public Banner instantiate(final Request<Banner> request) {
-		Banner result;
+	public Banner findOne(final Request<Banner> request) {
+		assert request != null;
 
-		result = new Banner();
+		Banner result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}
@@ -102,8 +106,12 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 	}
 
 	@Override
-	public void create(final Request<Banner> request, final Banner entity) {
+	public void update(final Request<Banner> request, final Banner entity) {
+		assert request != null;
+		assert entity != null;
+
 		this.repository.save(entity);
+
 	}
 
 }

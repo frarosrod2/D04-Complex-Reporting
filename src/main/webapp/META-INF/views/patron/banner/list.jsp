@@ -16,7 +16,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="administrator.banner.list.label.picture" path="picture" width="33%"/>
-	<acme:list-column code="administrator.banner.list.label.slogan" path="slogan" width="33%"/>		
-	<acme:list-column code="administrator.banner.list.label.targetURL" path="targetURL" width="33%"/>
+	<acme:list-column code="patron.banner.list.label.picture" path="picture" width="33%"/>
+	<acme:list-column code="patron.banner.list.label.slogan" path="slogan" width="33%"/>		
+	<acme:list-column code="patron.banner.list.label.targetURL" path="targetURL" width="33%"/>
 </acme:list>
