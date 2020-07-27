@@ -354,6 +354,37 @@
 		<property name="userAccount" ref="investor1UserAccount" />
 	</bean>
 	
+	<bean name="investor2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor2" />
+		<property name="password" value="investor2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Two" />
+				<property name="email" value="investor.two@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor2Investor" />
+				<ref bean="investor2Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="investor2Investor" class="acme.entities.roles.Investor">
+		<property name="name" value="Investor2" />
+		<property name="activitySector" value="Science" />
+		<property name="profile" value="Great investor" />
+		<property name="userAccount" ref="investor2UserAccount"/>
+		
+	</bean>
+
+	<bean name="investor2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor2UserAccount" />
+	</bean>
+	
 	
 	<bean id="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
 		<property name="title" value="Acme Investment" />
@@ -393,6 +424,7 @@
  		<property name="applications">
 			<list> 
 				<ref bean="application2"/>
+				<ref bean="application3"/>				
  			</list>
  		</property>
 	</bean>
@@ -410,12 +442,21 @@
 	
 	
 	<bean id="application2" class="acme.entities.applications.Application">
-		<property name="ticker" value="ART-20-000002"/>
+		<property name="ticker" value="ART-20-000004"/>
 		<property name="creationMoment" value="2020/06/04 14:10"/>
 		<property name="statement" value="pending"/>
 		<property name="investmentOffer" value="5.00€"/>
 		<property name="investmentRound" ref="investmentRound02"/>
 		<property name="investor" ref="investor1Investor"/>
+	</bean>
+	
+	<bean id="application3" class="acme.entities.applications.Application">
+		<property name="ticker" value="SCI-20-000005"/>
+		<property name="creationMoment" value="2020/01/04 10:10"/>
+		<property name="statement" value="pending"/>
+		<property name="investmentOffer" value="6.00€"/>
+		<property name="investmentRound" ref="investmentRound02"/>
+		<property name="investor" ref="investor2Investor"/>
 	</bean>
 	
 		<bean id="activity1" class="acme.entities.activities.Activity">

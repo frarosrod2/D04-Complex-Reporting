@@ -1,4 +1,8 @@
 
+    alter table `accounting_record` 
+       drop 
+       foreign key `FKk1pmfnppwk0kav7xloy8u71uq`;
+
     alter table `activity` 
        drop 
        foreign key `FK1ufotopeofii4jlefyk9c7os5`;
@@ -50,6 +54,8 @@
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    drop table if exists `accounting_record`;
 
     drop table if exists `activity`;
 
