@@ -410,7 +410,7 @@
 	
 	
 	<bean id="application2" class="acme.entities.applications.Application">
-		<property name="ticker" value="ART-20-000002"/>
+		<property name="ticker" value="ART-20-000004"/>
 		<property name="creationMoment" value="2020/06/04 14:10"/>
 		<property name="statement" value="pending"/>
 		<property name="investmentOffer" value="5.00€"/>
