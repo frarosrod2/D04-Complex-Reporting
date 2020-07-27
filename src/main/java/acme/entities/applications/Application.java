@@ -36,6 +36,14 @@ public class Application extends DomainEntity {
 	@NotNull
 	private Date				creationMoment;
 
+	//	@Past
+	//	@Temporal(TemporalType.TIMESTAMP)
+	//	private Date				updateStatusMoment;
+	//
+	//	@NotBlank
+	//	@Pattern(regexp = "^(accepted)?(rejected)?(pending)?$")
+	//	private String				status;
+
 	@NotBlank
 	private String				statement;
 
