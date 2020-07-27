@@ -1,20 +1,21 @@
 
-package acme.features.administrator.banner;
+package acme.features.patron.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
+import acme.entities.roles.Patron;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorBannerShowService implements AbstractShowService<Administrator, Banner> {
+public class PatronBannerShowService implements AbstractShowService<Patron, Banner> {
 
 	@Autowired
-	AdministratorBannerRepository repository;
+	PatronBannerRepository repository;
 
 
 	@Override

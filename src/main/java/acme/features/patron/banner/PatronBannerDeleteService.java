@@ -1,10 +1,11 @@
 
-package acme.features.administrator.banner;
+package acme.features.patron.banner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
+import acme.entities.roles.Patron;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -12,10 +13,10 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AdministratorBannerDeleteService implements AbstractDeleteService<Administrator, Banner> {
+public class PatronBannerDeleteService implements AbstractDeleteService<Patron, Banner> {
 
 	@Autowired
-	AdministratorBannerRepository repository;
+	PatronBannerRepository repository;
 
 
 	@Override
