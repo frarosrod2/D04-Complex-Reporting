@@ -510,3 +510,17 @@ ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] HTTP GET /acme-inc
 ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.META_002dINF.views.framework.panic_jsp] Exception: org.springframework.beans.AbstractNestablePropertyAccessor.getPropertyValue(AbstractNestablePropertyAccessor.java:703): Invalid property 'linkList' of bean class [acme.entities.notices.Notice]: Getter for property 'linkList' threw exception; nested exception is java.lang.reflect.InvocationTargetException
 java.lang.reflect.InvocationTargetExceptionjava.lang.NullPointerException
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'employerJobListMineService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [acme.features.entrepreneur.investmentRounds.EmployerJobListMineService] from ClassLoader [sun.misc.Launcher$AppClassLoader@73d16e93]
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265): Error creating bean with name 'employerJobListMineService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [acme.features.entrepreneur.investmentRounds.EmployerJobListMineService] from ClassLoader [sun.misc.Launcher$AppClassLoader@73d16e93]
+at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:507): Failed to introspect Class [acme.features.entrepreneur.investmentRounds.EmployerJobListMineService] from ClassLoader [sun.misc.Launcher$AppClassLoader@73d16e93]
+at java.lang.Class.getDeclaredMethods0(Native Method): Job
+at java.net.URLClassLoader.findClass(URLClassLoader.java:382): Job
+ERROR [org.apache.catalina.util.LifecycleBase] at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008): Protocol handler start failed
+at sun.nio.ch.Net.bind0(Native Method): Address already in use: bind
+ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] ***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+Action:
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
