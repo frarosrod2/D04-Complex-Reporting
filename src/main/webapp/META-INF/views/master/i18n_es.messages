@@ -110,6 +110,8 @@ master.menu.authenticated.toolRecord.list = Lista de registros de herramientas
 master.menu.authenticated.technologyRecord.list = Lista de registros tecnológicos
 master.menu.authenticated.challenge.list = Lista de desafíos
 master.menu.authenticated.investmentRound.list = Lista de ronda de inversiones
+master.menu.authenticated.menu.forums = Foros
+master.menu.authenticated.forums.list = Lista de foros
 
 # master.menu.anonymous.technologyRecord ###############################################################
 

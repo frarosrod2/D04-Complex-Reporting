@@ -33,7 +33,7 @@ public class InvestorApplicationListMineService implements AbstractListService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationMoment", "statement");
+		request.unbind(entity, model, "ticker", "creationMoment", "statement", "status");
 
 	}
 

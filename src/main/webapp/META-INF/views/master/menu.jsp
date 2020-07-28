@@ -120,7 +120,10 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 			<acme:menu-separator/>					
 			<acme:menu-suboption code="master.menu.authenticated.investmentRound.list" action="/authenticated/investment-round/list"/>
-			
+		</acme:menu-option>
+		<acme:menu-option code="master.menu.authenticated.menu.forums" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.forums.list" action="/authenticated/forum/list"/>
+<%-- 			<acme:menu-suboption code="master.menu.authenticated.forums.create" action="/authenticated/forum/create"/> --%>
 		</acme:menu-option>
 		
 	</acme:menu-left>

@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,6 +25,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.entities.activities.Activity;
 import acme.entities.applications.Application;
+import acme.entities.forums.Forum;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -84,4 +86,9 @@ public class InvestmentRound extends DomainEntity {
 	@OneToMany(mappedBy = "investmentRound", fetch = FetchType.EAGER)
 	@Fetch(value = FetchMode.SUBSELECT)
 	private Collection<Application>	applications;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Forum					forum;
 }
