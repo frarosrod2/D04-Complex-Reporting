@@ -33,8 +33,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, "numberOfNotices", "numberOfTechnologyRecords", "numberOfToolRecords", "minimumMoneyActiveInquiries", "maximumMoneyActiveInquiries", "averageMoneyActiveInquiries", "standardDeviationMoneyActiveInquiries",
 			"minimumMoneyActiveOvertures", "maximumMoneyActiveOvertures", "averageMoneyActiveOvertures", "standardDeviationMoneyActiveOvertures", "numberOfTechnologyRecordsBySector", "numberOfToolRecordsBySector", "technologyRecordsSectors",
 			"toolRecordsSectors", "ratioOpenTechnologies", "ratioClosedTechnologies", "ratioOpenTools", "ratioClosedTools", "averageNumberInvestmentRoundsEntrepreneur", "averageNumberApplicationsEntrepreneur", "averageNumberApplicationsInvestor",
-			"ratioOfSeedInvestmentRound", "ratioOfAngelInvestmentRound", "ratioOfSeriesAInvestmentRound", "ratioOfSeriesBInvestmentRound", "ratioOfSeriesCInvestmentRound", "ratioOfBridgeInvestmentRound");
-		//		, "ratioOfPendingApplications","ratioOfAcceptedApplications", "ratioOfRejectedApplications"
+			"ratioOfSeedInvestmentRound", "ratioOfAngelInvestmentRound", "ratioOfSeriesAInvestmentRound", "ratioOfSeriesBInvestmentRound", "ratioOfSeriesCInvestmentRound", "ratioOfBridgeInvestmentRound", "ratioOfPendingApplications",
+			"ratioOfAcceptedApplications", "ratioOfRejectedApplications");
 	}
 
 	@Override
@@ -77,9 +77,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setRatioOfSeriesBInvestmentRound(this.repository.getRatioOfSeriesBInvestmentRound());
 		result.setRatioOfSeriesCInvestmentRound(this.repository.getRatioOfSeriesCInvestmentRound());
 		result.setRatioOfBridgeInvestmentRound(this.repository.getRatioOfBridgeInvestmentRound());
-		//		result.setRatioOfPendingApplications(this.repository.getRatioOfPendingApplications());
-		//		result.setRatioOfAcceptedApplications(this.repository.getRatioOfAcceptedApplications());
-		//		result.setRatioOfRejectedApplications(this.repository.getRatioOfRejectedApplications());
+		result.setRatioOfPendingApplications(this.repository.getRatioOfPendingApplications());
+		result.setRatioOfAcceptedApplications(this.repository.getRatioOfAcceptedApplications());
+		result.setRatioOfRejectedApplications(this.repository.getRatioOfRejectedApplications());
 
 		return result;
 	}

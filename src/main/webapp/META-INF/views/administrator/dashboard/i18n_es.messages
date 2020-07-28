@@ -44,3 +44,4 @@ administrator.dashboard.chart.label.seriesa = Serie A
 administrator.dashboard.chart.label.seriesb = Serie B
 administrator.dashboard.chart.label.seriesc = Serie C
 administrator.dashboard.chart.label.bridge = Puente
+administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus = Proporción de aplicacines por estado

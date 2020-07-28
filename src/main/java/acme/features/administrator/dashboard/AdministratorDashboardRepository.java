@@ -97,13 +97,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select 1.0 * count(a) / (select count(b) from InvestmentRound b) from InvestmentRound a where a.round = 'BRIDGE'")
 	Double getRatioOfBridgeInvestmentRound();
 
-	//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'pending'")
-	//	Double getRatioOfPendingApplications();
-	//
-	//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'accepted'")
-	//	Double getRatioOfAcceptedApplications();
-	//
-	//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'rejected'")
-	//	Double getRatioOfRejectedApplications();
+	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'pending'")
+	Double getRatioOfPendingApplications();
+
+	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'accepted'")
+	Double getRatioOfAcceptedApplications();
+
+	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = 'rejected'")
+	Double getRatioOfRejectedApplications();
 
 }

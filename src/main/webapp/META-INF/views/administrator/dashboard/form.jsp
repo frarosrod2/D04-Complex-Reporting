@@ -111,11 +111,11 @@
 	</div>
 
 	<div class="row">
-<!-- 		<div class="col-md-6"> -->
-<%-- 			<acme:form-panel code="administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus"> --%>
-<%-- 				<canvas id="graph7"></canvas> --%>
-<%-- 			</acme:form-panel> --%>
-<!-- 		</div> -->
+		<div class="col-md-6">
+			<acme:form-panel code="administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus">
+				<canvas id="graph7"></canvas>
+			</acme:form-panel>
+		</div>
 		
 		<div class="col-md-6">
 			<acme:form-panel code="administrator.dashboard.chart.label.ratioOfInvestmentRoundsGroupedByKind">
@@ -303,15 +303,15 @@
 				},]
 		}
 		
-// 		var pieGraph7 = {
-// 				labels: applicationStatusLabels,
-// 				datasets: [{
-// 					label: "<acme:message code='administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus'/>",
-// 					backgroundColor: ["#FFCD56", "#4BC0C0", "#FF6384"],
-// 					borderWidth: 1,
-// 					data: applicationStatusData,
-// 				},]
-// 		}
+		var pieGraph7 = {
+				labels: applicationStatusLabels,
+				datasets: [{
+					label: "<acme:message code='administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus'/>",
+					backgroundColor: ["#FFCC00", "#00CC00", "#CC0000"],
+					borderWidth: 1,
+					data: applicationStatusData,
+				},]
+		}
 		
 		var pieGraph8 = {
 				labels: investmentRoundKindLabels,
@@ -331,7 +331,7 @@
 			var ctxGraph4 = document.getElementById('graph4').getContext('2d');
 			var ctxGraph5 = document.getElementById('graph5').getContext('2d'); 
 			var ctxGraph6 = document.getElementById('graph6').getContext('2d'); 
-// 			var ctxGraph7 = document.getElementById('graph7').getContext('2d'); 
+			var ctxGraph7 = document.getElementById('graph7').getContext('2d'); 
 			var ctxGraph8 = document.getElementById('graph8').getContext('2d'); 
 			
 			window.graph1 = new Chart(ctxGraph1, {
@@ -384,10 +384,10 @@
 				data: pieGraph6,
 			});
 			
-// 			window.graph7 = new Chart(ctxGraph7, {
-// 				type: 'pie',
-// 				data: pieGraph7,
-// 			});
+			window.graph7 = new Chart(ctxGraph7, {
+				type: 'pie',
+				data: pieGraph7,
+			});
 			
 			window.graph8 = new Chart(ctxGraph8, {
 				type: 'pie',

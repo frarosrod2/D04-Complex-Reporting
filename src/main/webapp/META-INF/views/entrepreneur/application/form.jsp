@@ -8,6 +8,7 @@
 	<acme:form-moment code="entrepreneur.application.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.statement" path="statement"/>
 	<acme:form-textbox code="entrepreneur.application.form.label.investmentOffer" path="investmentOffer"/>
+	<acme:form-textbox code="entrepreneur.application.form.label.status" path="status" readonly="true"/>
 		
   	<acme:form-return code="entrepreneur.application.form.button.return"/>
 </acme:form>

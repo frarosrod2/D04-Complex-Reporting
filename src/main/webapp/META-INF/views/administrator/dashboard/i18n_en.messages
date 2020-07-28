@@ -43,3 +43,5 @@ administrator.dashboard.chart.label.seriesa = Series A
 administrator.dashboard.chart.label.seriesb = Series B
 administrator.dashboard.chart.label.seriesc = Series C
 administrator.dashboard.chart.label.bridge = Bridge
+administrator.dashboard.chart.label.ratioOfApplicationsGroupedByStatus = Ratio of applications by status
+
