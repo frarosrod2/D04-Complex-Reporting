@@ -416,11 +416,6 @@
 	<bean name="patron1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="patron1UserAccount" />
 	</bean>
-	
-
-
-
-
 
 	
 	<bean id="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
@@ -441,6 +436,11 @@
  		<property name="applications">
 			<list> 
 				<ref bean="application1"/>
+ 			</list>
+ 		</property>
+ 		<property name="accountingRecords">
+			<list> 
+				<ref bean="accountingRecord1"/>
  			</list>
  		</property>
 	</bean>
@@ -466,6 +466,11 @@
 				<ref bean="application3"/>				
  			</list>
  		</property>
+ 		<property name="accountingRecords">
+			<list> 
+				<ref bean="accountingRecord2"/>
+ 			</list>
+ 		</property>
 	</bean>
 	
 	<bean id="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
@@ -486,6 +491,11 @@
  		<property name="applications">
 			<list> 
 				<ref bean="application4"/>			
+ 			</list>
+ 		</property>
+ 		<property name="accountingRecords">
+			<list> 
+				<ref bean="accountingRecord3"/>
  			</list>
  		</property>
 	</bean>
@@ -641,4 +651,67 @@
 			</list>
 		</property>
 	</bean>
+	
+		<!-- Bookkeepers -->
+	
+	
+	<bean id="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper1"/>
+		<property name="password" value="bookkeeper1"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+			<property name="name" value="Bookkeeper"/>
+			<property name="surname" value="One"/>
+			<property name="email" value="bookkeeper.one@acme.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper1Bookkeeper"/>
+				<ref bean="bookkeeper1Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="bookkeeper1Bookkeeper" class="acme.entities.roles.Bookkeeper">
+			<property name="name" value="Manuel Pérez"/>
+			<property name="responsabilityStatement" value="Test responsability"/>
+			<property name="userAccount" ref="bookkeeper1UserAccount"/>
+	</bean>
+	
+	<bean name="bookkeeper1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper1UserAccount" />
+	</bean>
+	
+	<!-- Accounting Records -->
+	
+	<bean name="accountingRecord1" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Accounting Record 1" />
+		<property name="status" value="DRAFT" />
+		<property name="creationMoment" value="2019/10/11 10:10" />
+		<property name="body" value="A example body 1" />
+		<property name="investmentRound" ref="investmentRound01" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+
+	</bean>
+	
+	<bean name="accountingRecord2" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Accounting Record 2" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2019/11/11 10:10" />
+		<property name="body" value="A example body 2" />
+		<property name="investmentRound" ref="investmentRound02" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+	</bean>
+	
+	<bean name="accountingRecord3" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Accounting Record 3" />
+		<property name="status" value="PUBLISHED" />
+		<property name="creationMoment" value="2019/12/11 10:10" />
+		<property name="body" value="A example body 3" />
+		<property name="investmentRound" ref="investmentRound03" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+	</bean>
+	
 </beans>

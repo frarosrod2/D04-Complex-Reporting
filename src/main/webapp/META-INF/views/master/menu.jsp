@@ -79,13 +79,18 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
 				
+		<!-- 		Role Menu 			 -->
+				
+				
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">		
 			<acme:menu-suboption code="master.menu.patron.createBanners" action="/patron/banner/create"/>
 			<acme:menu-suboption code="master.menu.patron.listBanners" action="/patron/banner/list"/>
-		</acme:menu-option>		
+		</acme:menu-option>			
 				
-				
-				
+		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listWritten" action="/bookkeeper/investment-round/list-written"/>
+			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.list" action="/bookkeeper/investment-round/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>

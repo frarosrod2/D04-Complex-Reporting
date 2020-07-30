@@ -6,6 +6,7 @@
         `creation_moment` datetime(6),
         `status` varchar(255),
         `title` varchar(255),
+        `bookkeeper_id` integer not null,
         `investment_round_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -77,7 +78,7 @@
         `version` integer not null,
         `user_account_id` integer,
         `name` varchar(255),
-        `reponsability_statement` varchar(255),
+        `responsability_statement` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -339,6 +340,11 @@ create index IDX3qtg1fe48q71u218rdyieeurl on `investment_round` (`creation_momen
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
+
+    alter table `accounting_record` 
+       add constraint `FK41jm4vk7runvmg5tderffrele` 
+       foreign key (`bookkeeper_id`) 
+       references `bookkeeper` (`id`);
 
     alter table `accounting_record` 
        add constraint `FKk1pmfnppwk0kav7xloy8u71uq` 
