@@ -1,6 +1,10 @@
 
     alter table `accounting_record` 
        drop 
+       foreign key `FK41jm4vk7runvmg5tderffrele`;
+
+    alter table `accounting_record` 
+       drop 
        foreign key `FKk1pmfnppwk0kav7xloy8u71uq`;
 
     alter table `activity` 

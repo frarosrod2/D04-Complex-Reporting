@@ -1,3 +1,4 @@
+
 package acme.entities.accountingRecords;
 
 import java.util.Date;
@@ -13,6 +14,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.roles.Bookkeeper;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,28 +22,35 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AccountingRecord extends DomainEntity{
-	
-	private static final long serialVersionUID = 1L;
-	
+public class AccountingRecord extends DomainEntity {
+
+	private static final long	serialVersionUID	= 1L;
+
 	@NotBlank
-	private String title;
-	
+	private String				title;
+
 	@NotBlank
 	@Pattern(regexp = "^(DRAFT)?(PUBLISHED)?$")
-	private String status; 
-	
+	private String				status;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	private Date					creationMoment;
+	private Date				creationMoment;
 
 	@NotBlank
-	private String body;
-	
+	private String				body;
+
+	// Relationships ----------------------------------------------------------
+
 	@NotNull
 	@ManyToOne(optional = false)
 	@Valid
-	private InvestmentRound investmentRound;
+	private InvestmentRound		investmentRound;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Bookkeeper			bookkeeper;
 
 }
