@@ -684,6 +684,37 @@
 		<property name="userAccount" ref="bookkeeper1UserAccount" />
 	</bean>
 	
+	
+	<bean id="bookkeeper2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper2"/>
+		<property name="password" value="bookkeeper2"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+			<property name="name" value="Bookkeeper"/>
+			<property name="surname" value="Two"/>
+			<property name="email" value="bookkeeper.two@acme.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper2Bookkeeper"/>
+				<ref bean="bookkeeper2Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
+			<property name="name" value="Pepe Pérez"/>
+			<property name="responsabilityStatement" value="Test responsability two"/>
+			<property name="userAccount" ref="bookkeeper2UserAccount"/>
+	</bean>
+	
+	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	</bean>
+	
+	
 	<!-- Accounting Records -->
 	
 	<bean name="accountingRecord1" class="acme.entities.accountingRecords.AccountingRecord">
@@ -711,7 +742,7 @@
 		<property name="creationMoment" value="2019/12/11 10:10" />
 		<property name="body" value="A example body 3" />
 		<property name="investmentRound" ref="investmentRound03" />
-		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
 	
 </beans>
