@@ -214,7 +214,10 @@ CREATE TABLE `banner` (
   `picture` varchar(255) DEFAULT NULL,
   `slogan` varchar(255) DEFAULT NULL,
   `targeturl` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `patron_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKdocr1jjfgwx9ef5jbf675l360` (`patron_id`),
+  CONSTRAINT `FKdocr1jjfgwx9ef5jbf675l360` FOREIGN KEY (`patron_id`) REFERENCES `patron` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -899,7 +902,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$KhclKH8XsU9oqUGe3DwWge1suBPFAJyy8qO2kAMRezXXzN0QvQd2S','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$BR7ds1JM/eZWegFniK4LKO3HqLdm7Sdf0Bk9e0z0j9HZB6xgDopMS','administrator');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$IFeWMjJwIKfUBB/IUOn4jO3k/CgejyPcw5UPYANp7q.9YCUQLX1t6','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$in/6NtDY21duqJaD.EzbPOQ82SyZRFbeUG6mpcPhAb3c5tTjQPkWK','administrator');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -912,4 +915,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-04 10:33:28
+-- Dump completed on 2020-08-06 11:10:53

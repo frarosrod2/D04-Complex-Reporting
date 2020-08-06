@@ -15,6 +15,7 @@ public interface PatronBannerRepository extends AbstractRepository {
 	@Query("select b from Banner b where b.id = ?1")
 	Banner findOneById(int id);
 
-	@Query("select b from Banner b")
-	Collection<Banner> findMany();
+	@Query("select b from Banner b where b.patron.id = ?1")
+	Collection<Banner> findManyByPatronId(int id);
+
 }

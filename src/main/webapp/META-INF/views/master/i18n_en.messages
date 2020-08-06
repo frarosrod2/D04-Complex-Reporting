@@ -56,7 +56,6 @@ master.menu.administrator.listToolRecords = List tool records
 # master.menu.patron ########################################################
 master.menu.patron = Patron
 master.menu.patron.listBanners = List banners
-master.menu.patron.createBanners = Create banner
 
 # master.menu.provider ########################################################
 master.menu.provider = Provider
