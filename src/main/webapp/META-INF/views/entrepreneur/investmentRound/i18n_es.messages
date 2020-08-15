@@ -13,3 +13,5 @@ entrepreneur.investmentRound.list.label.round = Ronda
 entrepreneur.investmentRound.list.label.ticker = Ticker
 
 entrepreneur.investmentRound.form.button.return = Volver
+
+authenticated.investmentRound.form.button.accountings = Cuentas
