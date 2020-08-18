@@ -6,7 +6,7 @@
 <acme:form readonly="true">
 	<acme:form-textbox code="bookkeeper.accountingRecord.form.label.title" path="title"/>
 	<acme:form-textbox code="bookkeeper.accountingRecord.form.label.status" path="status"/>
-	<acme:form-textbox code="bookkeeper.accountingRecord.form.label.creationMoment" path="creationMoment"/>
+	<acme:form-moment code="bookkeeper.accountingRecord.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textarea code="bookkeeper.accountingRecord.form.label.body" path="body"/>
   	
   	<acme:form-return code="bookkeeper.accountingRecord.form.button.return"/>
