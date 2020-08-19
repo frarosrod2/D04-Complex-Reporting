@@ -61,15 +61,10 @@
     create table `banner` (
        `id` integer not null,
         `version` integer not null,
-        `credit_card_brand` varchar(255),
-        `credit_card_cvv` integer,
-        `credit_card_exp_month` integer,
-        `credit_card_exp_year` integer,
-        `credit_card_holder_name` varchar(255),
-        `credit_card_number` varchar(255),
         `picture` varchar(255),
         `slogan` varchar(255),
         `targeturl` varchar(255),
+        `credit_card_id` integer,
         `patron_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -110,6 +105,18 @@
         `user_account_id` integer,
         `company` varchar(255),
         `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `credit_card` (
+       `id` integer not null,
+        `version` integer not null,
+        `brand` varchar(255),
+        `cvv` integer,
+        `exp_month` integer,
+        `exp_year` integer,
+        `holder_name` varchar(255),
+        `number` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -245,13 +252,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `credit_card_brand` varchar(255),
-        `credit_card_cvv` integer,
-        `credit_card_exp_month` integer,
-        `credit_card_exp_year` integer,
-        `credit_card_holder_name` varchar(255),
-        `credit_card_number` varchar(255),
         `name` varchar(255),
+        `credit_card_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -383,6 +385,11 @@ create index IDX3qtg1fe48q71u218rdyieeurl on `investment_round` (`creation_momen
        references `user_account` (`id`);
 
     alter table `banner` 
+       add constraint `FKr19baq0bri0akndc7ruwhngy4` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
+
+    alter table `banner` 
        add constraint `FKdocr1jjfgwx9ef5jbf675l360` 
        foreign key (`patron_id`) 
        references `patron` (`id`);
@@ -436,6 +443,11 @@ create index IDX3qtg1fe48q71u218rdyieeurl on `investment_round` (`creation_momen
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `patron` 
+       add constraint `FKpj4cod0bcxwxg4nqv4f2xkikg` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
 
     alter table `patron` 
        add constraint FK_8xx5nujhuio3advxc2freyu65 

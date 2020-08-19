@@ -83,7 +83,7 @@
 				
 				
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">		
-			<acme:menu-suboption code="master.menu.patron.listBanners" action="/patron/banner/list"/>
+			<acme:menu-suboption code="master.menu.patron.listBanners" action="/patron/banner/list-mine"/>
 		</acme:menu-option>			
 				
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">

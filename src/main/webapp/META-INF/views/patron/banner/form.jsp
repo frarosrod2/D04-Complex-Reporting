@@ -19,7 +19,16 @@
 	<acme:form-textbox code="patron.banner.form.label.picture" path="picture"/>
 	<acme:form-textbox code="patron.banner.form.label.slogan" path="slogan"/>
 	<acme:form-url code="patron.banner.form.label.targetURL" path="targetURL"/>
-	<acme:form-creditcard code="patron.banner.form.legend.creditCard" path="creditCard"/>	
-		
+	<jstl:if test="${hasCard}">
+		<h3>
+			<acme:message code="patron.banner.form.label.creditCard" />
+		</h3>
+		<acme:form-textbox code="patron.creditCard.label.holder" path="holderName" />
+		<acme:form-textbox code="patron.creditCard.label.number" path="number" />
+		<acme:form-textbox code="patron.creditCard.label.brand" path="brand" />
+		<acme:form-textbox code="patron.creditCard.label.cvv" path="cvv" />
+		<acme:form-textbox code="patron.creditCard.label.expMonth" path="expMonth" />
+		<acme:form-textbox code="patron.creditCard.label.expYear" path="expYear" />		
+	</jstl:if>
   	<acme:form-return code="patron.banner.form.button.return"/>
 </acme:form>

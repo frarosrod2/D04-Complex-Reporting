@@ -47,7 +47,4 @@ public class CreditCard extends DomainEntity {
 
 	//Relationships
 
-	//	@Valid
-	//	@OneToOne(optional = false)
-	//	private Banner				banner;
 }

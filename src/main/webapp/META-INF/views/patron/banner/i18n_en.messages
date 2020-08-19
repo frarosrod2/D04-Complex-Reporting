@@ -1,9 +1,15 @@
 patron.banner.form.label.picture = Picture
 patron.banner.form.label.slogan = Slogan
 patron.banner.form.label.targetURL = URL
-patron.banner.form.legend.creditCard = Credit card
+patron.creditCard.label.holder = Holder name
+patron.creditCard.label.number = Number
+patron.creditCard.label.brand = Brand
+patron.creditCard.label.cvv = CVV
+patron.creditCard.label.expMonth = Expiration  month
+patron.creditCard.label.expYear = Expiration year
+patron.banner.form.label.creditCard = Credit card
 patron.banner.form.button.return = Return
-
+patron.banner.form.label.creditCard = Card
 
 patron.banner.list.label.picture = Picture
 patron.banner.list.label.slogan = Slogan
